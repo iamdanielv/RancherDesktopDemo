@@ -181,6 +181,61 @@ After enabling the port forward you should be able to navigate to `http://localh
 
 **That's it!** You now have a container running in your kubernetes cluster that is accessible on the cluster IP and on a local port forward.  Let me know if you have any questions. I can be reached at [@IAmDanielV](https://twitter.com/IAmDanielV).
 
+### Adding Portainer
+If you want a web based view of your Kubernetes cluster, you can install Portainer. It's a very powerful UI that gives you a lot of control over the cluster and lets you deploy things without having to mess around with command lines.
+
+To learn more about Portainer go to [Portainer.io](https://www.portainer.io/)
+
+This was really easy to deploy, I followed the instructions from [Portainer's Documentation](https://docs.portainer.io/v/ce-2.9/start/install/server/kubernetes/wsl#deployment)
+
+Basically, you use Helm (installed for you by Rancher Desktop).
+
+**Step 1:** Add the Helm Repo
+
+```bash
+helm repo add portainer https://portainer.github.io/k8s/
+helm repo update
+```
+
+**Step 2:** Choose a way of accessing portainer.
+I chose the "Expose via NodePort" method, but there are also instructions for doing it with ingress and Load Balancer. You can explore and choose the one that fits your use case best.
+
+```bash
+helm install --create-namespace -n portainer portainer portainer/portainer
+```
+
+Helm should respond with something similar to:
+
+```bash
+helm install --create-namespace -n portainer portainer portainer/portainer
+NAME: portainer
+NAMESPACE: portainer
+STATUS: deployed
+REVISION: 1
+NOTES:
+Get the application URL by running these commands:
+  export NODE_PORT=$(kubectl get --namespace portainer -o jsonpath="{.spec.ports[1].nodePort}" services portainer)
+  export NODE_IP=$(kubectl get nodes --namespace portainer -o jsonpath="{.items[0].status.addresses[0].address}")
+  echo https://$NODE_IP:$NODE_PORT
+```
+
+the **export** command will not work on Windows, so I just ran the commands manually
+
+```bash
+# get port
+kubectl get --namespace portainer -o jsonpath="{.spec.ports[1].nodePort}" services portainer
+
+# get node IP
+kubectl get nodes --namespace portainer -o jsonpath="{.items[0].status.addresses[0].address}"
+```
+
+in my case it returned 30779 for port and an IP.
+
+**That's it!** Your portainer instance should be available at `https://IP:30779` or `https://localhost:30779/`
+
+Portainer has a lot of features and is beyond the scope of this demo, but you can learn more at [Portainer.io](https://www.portainer.io/)
+
+
 ### Cleaning up
 
 The kubernetes engine will keep the specified containers running. If you want to stop and free up some memory once you are done you can change to the `sample/deployment` folder and run:
