@@ -26,7 +26,9 @@ wsl --install
 
 ### 3. Install Rancher Desktop
 
-Go to [Rancher Desktop](https://rancherdesktop.io/) and get their latest version. (At the time of this writing it is version 0.4.1)
+Go to [Rancher Desktop](https://rancherdesktop.io/) and get their latest version. (At the time of this writing it is version 0.6.0)
+
+> **Rancher Desktop for Linux is coming soon!**
 
 ## Working with Rancher Desktop
 
