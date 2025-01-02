@@ -206,7 +206,7 @@ After enabling the port forward you should be able to navigate to `http://localh
 
 ## Conclusion and Next Steps
 
-**That's it!** You now have a container running in your kubernetes cluster that is accessible on the cluster IP and on a local port forward.  Let me know if you have any questions. I can be reached at [@IAmDanielV](https://twitter.com/IAmDanielV).
+**That's it!** You now have a container running in your kubernetes cluster that is accessible on the cluster IP and on a local port forward.  Let me know if you have any questions. I can be reached at [@IAmDanielV](https://twitter.com/IAmDanielV) or [@iamdanielv.bsky.social](https://bsky.app/profile/iamdanielv.bsky.social).
 
 ## Adding Portainer
 
