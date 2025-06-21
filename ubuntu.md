@@ -142,3 +142,30 @@ Password store initialized for 70C_SOME_RANDOM_NUMBERS_AND_LETTERS_ED
 ```
 
 For more details on pass, see its [website](https://www.passwordstore.org/).
+
+## Setup Traefik
+
+Rancher Desktop uses Traefik as a reverse proxy. We need to change our system config to enable it to handle ports properly. We can do this by editing the `/etc/sysctl.conf` file. Type the followign into a terminal:
+
+```bash
+sudo nano /etc/sysctl.conf
+```
+
+and add the following to the bottom of the file:
+
+```bash
+sudo sysctl -w net.ipv4.ip_unprivileged_port_start=80
+```
+
+this will make the setting persist across reboots. We can check that it was set correctly by running:
+
+```bash
+sysctl net.ipv4.ip_unprivileged_port_start
+```
+
+it should respond with something similar to:
+
+```bash
+daniel@rddemo:~$ sysctl net.ipv4.ip_unprivileged_port_start
+net.ipv4.ip_unprivileged_port_start = 80
+```
