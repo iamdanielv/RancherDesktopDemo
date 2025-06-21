@@ -65,7 +65,6 @@ if curl -fsSL https://download.opensuse.org/repositories/isv:/Rancher:/stable/de
     echo -e "\e[32m✔ rancher GPG key added successfully\e[0m"
 else
     echo -e "\e[31m✗ Failed to add rancher GPG key\e[0m" >&2
-    exit 1
 fi
 ```
 
@@ -76,18 +75,17 @@ if echo 'deb [signed-by=/usr/share/keyrings/isv-rancher-stable-archive-keyring.g
     echo -e "\e[32m✔ Repository added successfully\e[0m"
 else
     echo -e "\e[31m✗ Failed to add repository\e[0m" >&2
-    exit 1
 fi
 ```
 
 #### Update package lists
 
 ```bash
-sudo apt update && echo -e "\e[32m✔ apt update successful\e[0m" || { echo -e "\e[31m✗ apt update failed\e[0m" >&2; exit 1; }
+sudo apt update && echo -e "\e[32m✔ apt update successful\e[0m" || { echo -e "\e[31m✗ apt update failed\e[0m" >&2;}
 ```
 
 #### Install Rancher Desktop
 
 ```bash
-sudo apt install -y rancher-desktop && echo -e "\e[32m✔ Rancher Desktop installed successfully\e[0m" || { echo -e "\e[31m✗ Rancher Desktop installation failed\e[0m" >&2; exit 1; }
+sudo apt install -y rancher-desktop && echo -e "\e[32m✔ Rancher Desktop installed successfully\e[0m" || { echo -e "\e[31m✗ Rancher Desktop installation failed\e[0m" >&2;}
 ```
