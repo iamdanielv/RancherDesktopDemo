@@ -69,3 +69,13 @@ else
 fi
 ```
 
+#### Add the Rancher Desktop repository
+
+```bash
+if echo 'deb [signed-by=/usr/share/keyrings/isv-rancher-stable-archive-keyring.gpg] https://download.opensuse.org/repositories/isv:/Rancher:/stable/deb/ ./' | sudo tee /etc/apt/sources.list.d/isv-rancher-stable.list > /dev/null; then
+    echo -e "\e[32m✔ Repository added successfully\e[0m"
+else
+    echo -e "\e[31m✗ Failed to add repository\e[0m" >&2
+    exit 1
+fi
+```
