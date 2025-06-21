@@ -104,6 +104,18 @@ rancher-desktop
 
 or the Rancher Desktop icon in the Apps view.
 
+> [!IMPORTANT]  
+> Once you have started the rancher desktop application you should start a new terminal session to make sure that all the tooling is added to your path.
+
+in my case, the tools were installed as seen in the terminal:
+
+```bash
+daniel@rddemo:~$ which kubectl
+/home/daniel/.rd/bin/kubectl
+daniel@rddemo:~$ which docker
+/home/daniel/.rd/bin/docker
+```
+
 ## Add pass
 
 Rancher Desktop uses pass for credential storage, we need to generate a key and add it to our system. To do this run the following command:
