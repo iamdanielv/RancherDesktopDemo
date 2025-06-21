@@ -42,7 +42,8 @@ if you get an error, you will need to change the permissions for your user. You 
 sudo usermod -a -G kvm "$USER"
 ```
 
-To activate the new group permissions and make sure that all variables are set properly, you need to reboot your system with the command:
+> [!IMPORTANT]
+> To activate the new group permissions and make sure that all variables are set properly, you need to reboot your system with the command:
 
 ```bash
 sudo reboot
@@ -106,7 +107,7 @@ rancher-desktop
 
 or the Rancher Desktop icon in the Apps view.
 
-> [!IMPORTANT]  
+> [!IMPORTANT]
 > Once you have started the rancher desktop application you should start a new terminal session to make sure that all the tooling is added to your path.
 
 in my case, the tools were installed as seen in the terminal:
