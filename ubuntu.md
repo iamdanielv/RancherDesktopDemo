@@ -103,3 +103,42 @@ rancher-desktop
 ```
 
 or the Rancher Desktop icon in the Apps view.
+
+### Add pass
+
+Rancher Desktop uses pass for credential storage, we need to generate a key and add it to our system. To do this run the following command:
+
+```bash
+gpg --generate-key
+```
+
+This will prompt you to enter some information about your key, such as your name, email address, and passphrase. Follow the prompts until you have completed the process.
+
+Once the tool has completed generating your key, it should show something similar to:
+
+```bash
+public and secret key created and signed.
+
+pub   ed25519 YYYY-MM-DD [SC] [expires: YYYY-MM-DD]
+      70C_SOME_RANDOM_NUMBERS_AND_LETTERS_ED
+uid                      daniel <daniel@test.com>
+sub   cv25519 YYYY-MM-DD [E] [expires: YYYY-MM-DD]
+```
+
+You will need the public key for Rancher Desktop to work. You can find this in the output of the `gpg --generate-key` command, under the "pub" line. The public key in the sample above is: "70C_SOME_RANDOM_NUMBERS_AND_LETTERS_ED", but yours will be different.
+
+#### Initialize pass
+
+To get the pub key into pass, we can run the following command:
+
+```bash
+pass init 70C_SOME_RANDOM_NUMBERS_AND_LETTERS_ED
+```
+
+the command should respond with something similar to:
+
+```bash
+Password store initialized for 70C_SOME_RANDOM_NUMBERS_AND_LETTERS_ED
+```
+
+For more details on pass, see its [website](https://www.passwordstore.org/).
