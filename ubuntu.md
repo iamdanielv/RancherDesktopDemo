@@ -57,3 +57,15 @@ The documentation asks us to use curl, but it may not be installed. To make sure
 ```bash
 sudo apt install curl -y
 ```
+
+#### Download and add the Rancher Desktop GPG key
+
+```bash
+if curl -fsSL https://download.opensuse.org/repositories/isv:/Rancher:/stable/deb/Release.key | gpg --dearmor | sudo tee /usr/share/keyrings/isv-rancher-stable-archive-keyring.gpg > /dev/null; then
+    echo -e "\e[32m✔ rancher GPG key added successfully\e[0m"
+else
+    echo -e "\e[31m✗ Failed to add rancher GPG key\e[0m" >&2
+    exit 1
+fi
+```
+
