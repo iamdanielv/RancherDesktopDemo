@@ -18,7 +18,7 @@ sudo apt update && sudo apt upgrade -y
 
 ## Rancher Desktop Install
 
-The Rancher team has a pretty comprehensive [install guide](https://docs.rancherdesktop.io/getting-started/installation/#linux) for installing Rancher Desktop on Linux. I will be following those instructions, you may want to refer to those instructions as you follow
+The Rancher team has a pretty comprehensive [install guide](https://docs.rancherdesktop.io/getting-started/installation/#linux) for installing Rancher Desktop on Linux. I will be following those instructions, you may want to refer to those instructions as you follow these instructions.
 
 ### Check permissions
 
