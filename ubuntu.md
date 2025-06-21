@@ -116,6 +116,47 @@ daniel@rddemo:~$ which docker
 /home/daniel/.rd/bin/docker
 ```
 
+### Testing Docker
+
+After installing Rancher Desktop, you can test that Docker is working correctly by running the following command:
+
+```bash
+docker run hello-world
+```
+
+it should respond with something similar to:
+
+```bash
+daniel@rddemo:~$ docker run hello-world
+Unable to find image 'hello-world:latest' locally
+latest: Pulling from library/hello-world
+e6590344b1a5: Pull complete 
+Digest: sha256:940c619fbd418f9b2b1b63e25d8861f9cc1b46e3fc8b018ccfe8b78f19b8cc4f
+Status: Downloaded newer image for hello-world:latest
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+
+```
+
 ## Add pass
 
 Rancher Desktop uses pass for credential storage, we need to generate a key and add it to our system. To do this run the following command:
