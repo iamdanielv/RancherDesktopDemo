@@ -89,3 +89,17 @@ sudo apt update && echo -e "\e[32m✔ apt update successful\e[0m" || { echo -e "
 ```bash
 sudo apt install -y rancher-desktop && echo -e "\e[32m✔ Rancher Desktop installed successfully\e[0m" || { echo -e "\e[31m✗ Rancher Desktop installation failed\e[0m" >&2;}
 ```
+
+If everything went smoothly, you should see something similar to:
+
+```bash
+✔ Rancher Desktop installed successfully
+```
+
+you can now start Rancher Desktop by running the following command in a terminal:
+
+```bash
+rancher-desktop
+```
+
+or the Rancher Desktop icon in the Apps view.
