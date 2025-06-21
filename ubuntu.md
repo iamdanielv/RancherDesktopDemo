@@ -34,7 +34,9 @@ it should respond with:
 ✔ KVM OK
 ```
 
-if not, you will need to change the permissions for your user. You can do this by running the following command in a terminal window as root (or sudo):
+### ⚠️ Troubleshooting: KVM Permissions
+
+if you get an error, you will need to change the permissions for your user. You can do this by running the following command in a terminal window as root (or sudo):
 
 ```bash
 sudo usermod -a -G kvm "$USER"
