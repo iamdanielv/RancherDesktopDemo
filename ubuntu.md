@@ -1,5 +1,13 @@
 # Rancher Desktop on Ubuntu - Demo
 
+## Table of Contents
+
+- [Pre-Req's](#pre-reqs)
+- [Rancher Desktop Install](#rancher-desktop-install)
+- [Testing Docker](#testing-docker)
+- [Add pass](#add-pass)
+- [Setup Traefik](#setup-traefik)
+
 I was looking for a way to easily run a kubernetes cluster on Windows and came across [Rancher Desktop](https://rancherdesktop.io/).
 
 This repo is a way for me to write down how I did it and hopefully help other people who may be interested in doing something similar.
@@ -22,7 +30,7 @@ The Rancher team has a pretty comprehensive [install guide](https://docs.rancher
 
 ### Check permissions
 
-The first thing we need to do is check that our user has permission to use the kvm device. I modified the command provided in the isntructions to make it a little more readable:
+The first thing we need to do is check that our user has permission to use the kvm device. I modified the command provided in the instructions to make it a little more readable:
 
 ```bash
 [ -r /dev/kvm ] && [ -w /dev/kvm ] && echo -e "\n\e[32m✔ KVM OK\e[0m\n" || echo -e "\n\e[31m✗ problem with permissions\e[0m\n"
@@ -201,7 +209,7 @@ For more details on pass, see its [website](https://www.passwordstore.org/).
 
 ## Setup Traefik
 
-Rancher Desktop uses Traefik as a reverse proxy. We need to change our system config to enable it to handle ports properly. We can do this by editing the `/etc/sysctl.conf` file. Type the followign into a terminal:
+Rancher Desktop uses Traefik as a reverse proxy. We need to change our system config to enable it to handle ports properly. We can do this by editing the `/etc/sysctl.conf` file. Type the following into a terminal:
 
 ```bash
 sudo nano /etc/sysctl.conf
