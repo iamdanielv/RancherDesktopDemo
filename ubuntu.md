@@ -8,7 +8,7 @@ This repo is a way for me to write down how I did it and hopefully help other pe
 
 ### This is tested on Ubuntu 25.04, but should also work on 24.04
 
-[Ubuntu Desktop] (https://ubuntu.com/download/desktop)
+[Ubuntu Desktop](https://ubuntu.com/download/desktop)
 
 Update your desktop install with:
 
