@@ -45,3 +45,15 @@ To activate the new group permissions and make sure that all variables are set p
 ```bash
 sudo reboot
 ```
+
+### Install Rancher Desktop with .deb Package
+
+In order to install Rancher Desktop, we need to add the GPG key and the repository to our sources list. I modified the instructions a little to make it more clear what each step is doing.
+
+#### Install curl
+
+The documentation asks us to use curl, but it may not be installed. To make sure curl is installed, run:
+
+```bash
+sudo apt install curl -y
+```
